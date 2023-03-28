@@ -45,7 +45,7 @@
 
         <span class="text-sm">誤差：±2mm為正常誤差值</span>
 
-        <div class="flex gap-5">
+        <!-- <div class="flex gap-5">
           <div class="flex flex-1">
             <a
               href="javascript: void(0)"
@@ -74,7 +74,7 @@
           >
             購買
           </a>
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
