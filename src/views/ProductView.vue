@@ -12,10 +12,17 @@
         </a>
       </div>
 
-      <Fancybox class="flex flex-col justify-between">
-        <a data-fancybox :href="prodList[prodIndex].url">
-          <img :src="prodList[prodIndex].img" />
-        </a>
+      <Fancybox class="flex w-[430px] flex-col justify-between">
+        <template v-for="(prod, index) in prodList">
+          <a
+            data-fancybox="gallery"
+            :href="prod.url"
+            v-show="index === prodIndex"
+            :key="index"
+          >
+            <img :src="prod.img" />
+          </a>
+        </template>
       </Fancybox>
 
       <div class="flex flex-col gap-4">
