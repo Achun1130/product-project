@@ -1,24 +1,20 @@
 <template>
   <div class="mx-auto max-w-5xl py-4 px-4">
     <div class="flex gap-5">
-      <Fancybox class="flex flex-col justify-between">
-        <a data-fancybox href="https://lipsum.app/id/61/1600x1200">
-          <img src="@/assets/img/prod_1_s.png" />
+      <div class="flex flex-col justify-between gap-5">
+        <a
+          href="javascript: void()"
+          @click.prevent="prodIndex = index"
+          v-for="(prod, index) in prodList"
+          :key="index"
+        >
+          <img :src="prod.img" width="130" />
         </a>
-        <a data-fancybox href="https://lipsum.app/id/61/1600x1200">
-          <img src="@/assets/img/prod_1_s.png" />
-        </a>
-        <a data-fancybox href="https://lipsum.app/id/61/1600x1200">
-          <img src="@/assets/img/prod_1_s.png" />
-        </a>
-        <a data-fancybox href="https://lipsum.app/id/61/1600x1200">
-          <img src="@/assets/img/prod_1_s.png" />
-        </a>
-      </Fancybox>
+      </div>
 
       <Fancybox class="flex flex-col justify-between">
-        <a data-fancybox href="https://lipsum.app/id/61/1600x1200">
-          <img src="@/assets/img/prod_1.png" />
+        <a data-fancybox :href="prodList[prodIndex].url">
+          <img :src="prodList[prodIndex].img" />
         </a>
       </Fancybox>
 
@@ -91,6 +87,25 @@ export default {
   data() {
     return {
       num: 1,
+      prodList: [
+        {
+          img: require("@/assets/img/prod_1_s.png"),
+          url: "https://achun1130.github.io/product-project/img/prod_1_s.f357d98f.png",
+        },
+        {
+          img: require("@/assets/img/prod_2_s.png"),
+          url: "https://achun1130.github.io/product-project/img/prod_2_s.55fdf7d1.png",
+        },
+        {
+          img: require("@/assets/img/prod_3_s.png"),
+          url: "https://achun1130.github.io/product-project/img/prod_3_s.524c7cc4.png",
+        },
+        {
+          img: require("@/assets/img/prod_4_s.png"),
+          url: "https://achun1130.github.io/product-project/img/prod_4_s.213d5738.png",
+        },
+      ],
+      prodIndex: 0,
     };
   },
   methods: {
