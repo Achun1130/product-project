@@ -1,31 +1,36 @@
 <template>
   <div class="mx-auto max-w-5xl py-4 px-4">
-    <div class="grid grid-cols-12 gap-5">
-      <div class="col-span-2 flex flex-col justify-between gap-5">
-        <a
-          href="javascript: void()"
-          @click.prevent="prodIndex = index"
-          v-for="(prod, index) in prodList"
-          :key="index"
+    <div class="grid gap-5 sm:grid-cols-12">
+      <div class="grid gap-5 sm:col-span-6 lg:col-span-8 lg:grid-cols-8">
+        <Fancybox
+          class="flex flex-col justify-between overflow-hidden rounded-lg lg:order-last lg:col-span-6"
         >
-          <img :src="prod.img" />
-        </a>
-      </div>
+          <template v-for="(prod, index) in prodList">
+            <a
+              data-fancybox="gallery"
+              :href="prod.url"
+              v-show="index === prodIndex"
+              :key="index"
+              class="h-full w-full"
+            >
+              <img :src="prod.img" class="h-full w-full object-cover" />
+            </a>
+          </template>
+        </Fancybox>
 
-      <Fancybox class="col-span-6 flex flex-col justify-between">
-        <template v-for="(prod, index) in prodList">
+        <div class="flex justify-between gap-5 lg:col-span-2 lg:flex-col">
           <a
-            data-fancybox="gallery"
-            :href="prod.url"
-            v-show="index === prodIndex"
+            href="javascript: void()"
+            @click.prevent="prodIndex = index"
+            v-for="(prod, index) in prodList"
             :key="index"
           >
             <img :src="prod.img" class="w-full" />
           </a>
-        </template>
-      </Fancybox>
+        </div>
+      </div>
 
-      <div class="col-span-4 flex flex-col gap-4">
+      <div class="flex flex-col gap-4 sm:col-span-6 lg:col-span-4">
         <h2 class="text-2xl font-bold">抽屜禮盒</h2>
 
         <p class="text-sm text-muted-200">
