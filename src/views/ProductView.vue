@@ -1,18 +1,18 @@
 <template>
   <div class="mx-auto max-w-5xl py-4 px-4">
-    <div class="flex gap-5">
-      <div class="flex flex-col justify-between gap-5">
+    <div class="grid grid-cols-12 gap-5">
+      <div class="col-span-2 flex flex-col justify-between gap-5">
         <a
           href="javascript: void()"
           @click.prevent="prodIndex = index"
           v-for="(prod, index) in prodList"
           :key="index"
         >
-          <img :src="prod.img" width="130" />
+          <img :src="prod.img" />
         </a>
       </div>
 
-      <Fancybox class="flex w-[430px] flex-col justify-between">
+      <Fancybox class="col-span-6 flex flex-col justify-between">
         <template v-for="(prod, index) in prodList">
           <a
             data-fancybox="gallery"
@@ -20,12 +20,12 @@
             v-show="index === prodIndex"
             :key="index"
           >
-            <img :src="prod.img" />
+            <img :src="prod.img" class="w-full" />
           </a>
         </template>
       </Fancybox>
 
-      <div class="flex flex-col gap-4">
+      <div class="col-span-4 flex flex-col gap-4">
         <h2 class="text-2xl font-bold">抽屜禮盒</h2>
 
         <p class="text-sm text-muted-200">
