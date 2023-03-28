@@ -28,16 +28,19 @@
 
         <hr class="border-muted-100" />
 
-        <span>
-          價格範圍：
-          <span class="ml-[6px] text-muted-200">$350.00/個</span>
-        </span>
-
         <div class="flex">
           <div class="flex">單一尺寸：</div>
           <div class="ml-[6px] text-muted-200">
             <div>長 x 寬 x 高(公釐mm)</div>
             <div>300 x 200 x 100</div>
+          </div>
+        </div>
+
+        <div class="flex">
+          <div class="flex">款式種類：</div>
+          <div class="ml-[6px] text-muted-200">
+            <div>三種紙材</div>
+            <div>牛皮紙 / 白銅紙 / 黑卡紙</div>
           </div>
         </div>
 
